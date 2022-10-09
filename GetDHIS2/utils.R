@@ -67,8 +67,21 @@ load_specs <- function(folder = Sys.getenv("dhis2_folder")){
 getData <- function(data_element_group = "OPD - New Consultations",
                     country = "Bangladesh",
                     projects = c("Balukhali Healthcare", "Kutupalong Healthcare"),
-                    time_period = "LAST_12_MONTHS",
+                    time_period_type = "MONTHS",
+                    start_date = "2020-01-01",
+                    end_date = Sys.Date(),
                     metadata = metadata){
+  #convert time period to list
+  datseq <- function(t1, t2) { 
+    format(seq(as.Date(t1, "%Y-%m-%d"), 
+               as.Date(t2, "%Y-%m-%d"),by="month"), 
+           "%Y%m") 
+  }
+    if(time_period_type == "MONTHS"){
+      time_period <- datseq(t1 = start_date,
+                             t2 = end_date)
+    }
+  
   data_elements <-  rbindlist(map(metadata[["dataElementGroups"]], as.data.table), fill = TRUE, idcol = T) %>%
     filter(name == data_element_group) %>%
     select(dataElements) %>%
@@ -101,7 +114,7 @@ getData <- function(data_element_group = "OPD - New Consultations",
     
   data <- datimutils::getAnalytics(dx = dput(data_elements$dataElements),
                                    ou = dput(facility_list$id),
-                                   pe = time_period,
+                                   pe = dput(time_period),
                                   return_names = TRUE)
   return(data)
 }
@@ -113,4 +126,3 @@ getData <- function(data_element_group = "OPD - New Consultations",
 # THIS_YEAR, MONTHS_LAST_YEAR, QUARTERS_LAST_YEAR, LAST_YEAR, LAST_5_YEARS, LAST_10_YEARS, LAST_10_FINANCIAL_YEARS, LAST_12_MONTHS,
 # LAST_3_MONTHS, LAST_6_BIMONTHS, LAST_4_QUARTERS, LAST_2_SIXMONTHS, THIS_FINANCIAL_YEAR,
 # LAST_FINANCIAL_YEAR, LAST_5_FINANCIAL_YEARS
-

@@ -1,5 +1,4 @@
-pacman::p_load(yaml, tidyverse, jsonlite, purrr, data.table, devtools, utils)
-devtools::install_github(repo = "https://github.com/pepfar-datim/datimutils.git", ref = "master")
+
 
 #' Check to see if cache exists, if not create it
 #' @param folder A string, the location of the dhis2 data folder
@@ -49,7 +48,8 @@ load_specs <- function(folder = Sys.getenv("dhis2_folder")){
   getMetadata_all <- function(base_url = load_specs()$dhis2$base_url,
                               username = load_specs()$dhis2$username,
                               password = load_specs()$dhis2$password){
-    metadata_types <- content(GET("https://his.oca.msf.org/api/resources"), as="parsed") 
+    
+    metadata_types <- content(GET("https://his.oca.msf.org/api/resources", authenticate(username,password)), as="parsed") 
     metadata_types <- do.call(rbind.data.frame, metadata_types$resources) %>%
       filter(!(plural %in% c("oAuth2Clients", "relationships", "trackedEntityInstances", "dataStores", "dataElementOperands",
                            "metadataVersions", "externalFileResources", "users", "fileResources", "icons")))
@@ -98,9 +98,11 @@ getData <- function(data_element_group = "OPD - New Consultations",
   if(is.null(data_element_group)){
     data_elements <-  rbindlist(map(metadata[["dataElements"]], as.data.table), fill = TRUE, idcol = T) %>%
       filter(aggregationType == "SUM") %>%
-      filter(!(grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
+      # filter(!(grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
+      # filter((grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
       select(id, name, aggregationType) %>%
       unique() %>%
+      # slice(1:5) %>%
       rename(dataElements = id)
   }
 
@@ -146,10 +148,15 @@ getData <- function(data_element_group = "OPD - New Consultations",
   
   for(i in 1:length(data_elements$dataElements)){
     print(i)
+    data <- tryCatch({
     data <- datimutils::getAnalytics(dx = data_elements$dataElements[i],
                                      ou = dput(org_unit_list$id),
                                      pe = dput(time_period),
                                      return_names = TRUE)
+    }, error = function(e) {
+      data <- NULL
+    })
+    
     if(i == 1){
       all_data <- data
     }

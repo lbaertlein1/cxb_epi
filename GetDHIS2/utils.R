@@ -65,10 +65,25 @@ load_specs <- function(folder = Sys.getenv("dhis2_folder")){
   }
 
 #convert time period to list
-  datseq <- function(t1, t2) { 
-    format(seq(as.Date(t1, "%Y-%m-%d"), 
+  datseq <- function(time_period_type, t1, t2) { 
+    if(time_period_type == "MONTHS"){
+    x <-format(seq(as.Date(t1, "%Y-%m-%d"), 
                as.Date(t2, "%Y-%m-%d"),by="month"), 
            "%Y%m") 
+    }
+    if(time_period_type == "WEEKS"){
+      x <- paste0(year(seq(as.Date(t1, "%Y-%m-%d"), 
+                                 as.Date(t2, "%Y-%m-%d"),by="week")),
+                     "W",
+                     lubridate::epiweek(seq(as.Date(t1, "%Y-%m-%d"), 
+                                            as.Date(t2, "%Y-%m-%d"),by="week")))
+    }
+    if(time_period_type == "DAYS"){
+      x <-format(seq(as.Date(t1, "%Y-%m-%d"), 
+                     as.Date(t2, "%Y-%m-%d"),by="day"), 
+                 "%Y%m%d") 
+    }
+    return(x)
   }
   
 getData <- function(data_element_group = "OPD - New Consultations",
@@ -80,8 +95,9 @@ getData <- function(data_element_group = "OPD - New Consultations",
                     metadata = metadata,
                     org_unit_hierarchy = 5,
                     relative_time_period = "LAST_12_MONTHS"){
-    if(time_period_type == "MONTHS"){
-      time_period <- datseq(t1 = start_date,
+    if(time_period_type != "RELATIVE"){
+      time_period <- datseq(time_period_type = time_period_type,
+                            t1 = start_date,
                              t2 = end_date)
     }
     if(time_period_type == "RELATIVE"){
@@ -97,13 +113,13 @@ getData <- function(data_element_group = "OPD - New Consultations",
   }
   if(is.null(data_element_group)){
     data_elements <-  rbindlist(map(metadata[["dataElements"]], as.data.table), fill = TRUE, idcol = T) %>%
-      filter(aggregationType == "SUM") %>%
+      # filter(aggregationType == "SUM") %>%
       # filter(!(grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
       # filter((grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
       select(id, name, aggregationType) %>%
       unique() %>%
-      # slice(1:5) %>%
       rename(dataElements = id)
+    data_elements <- sample_n(data_elements, 10)
   }
 
   country_id <- rbindlist(map(metadata[["organisationUnits"]], as.data.table), fill = TRUE, idcol = T) %>%
@@ -149,12 +165,12 @@ getData <- function(data_element_group = "OPD - New Consultations",
   for(i in 1:length(data_elements$dataElements)){
     print(i)
     data <- tryCatch({
-    data <- datimutils::getAnalytics(dx = data_elements$dataElements[i],
+    datimutils::getAnalytics(dx = data_elements$dataElements[i],
                                      ou = dput(org_unit_list$id),
                                      pe = dput(time_period),
                                      return_names = TRUE)
     }, error = function(e) {
-      data <- NULL
+        NULL
     })
     
     if(i == 1){

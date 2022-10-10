@@ -86,15 +86,20 @@ load_specs <- function(folder = Sys.getenv("dhis2_folder")){
     return(x)
   }
   
-getData <- function(data_element_group = "OPD - New Consultations",
+getData <- function(data_group = NULL,
                     country = "Bangladesh",
                     projects = NULL,
                     time_period_type = "MONTHS",
                     start_date = "2020-01-01",
                     end_date = Sys.Date(),
-                    metadata = metadata,
+                    metadata = NULL,
                     org_unit_hierarchy = 5,
-                    relative_time_period = "LAST_12_MONTHS"){
+                    relative_time_period = "LAST_12_MONTHS",
+                    include_data_elements = TRUE,
+                    include_program_indicators = TRUE){
+    if(is.null(metadata)){
+      metadata <- getMetadata_all()
+    }
     if(time_period_type != "RELATIVE"){
       time_period <- datseq(time_period_type = time_period_type,
                             t1 = start_date,
@@ -104,22 +109,46 @@ getData <- function(data_element_group = "OPD - New Consultations",
       time_period <- relative_time_period
     }
   
-  if(!is.null(data_element_group)){
+  if(!is.null(data_group)){
   data_elements <-  rbindlist(map(metadata[["dataElementGroups"]], as.data.table), fill = TRUE, idcol = T) %>%
-    filter(name == data_element_group) %>%
+    filter(name == data_group) %>%
     select(dataElements) %>%
     unnest(cols=c(dataElements)) %>%
     unnest(cols=c(dataElements))
+  program_indicators <-  rbindlist(map(metadata[["programIndicatorGroups"]], as.data.table), fill = TRUE, idcol = T) %>%
+    filter(name == data_group) %>%
+    select(programIndicators) %>%
+    unnest(cols=c(programIndicators)) %>%
+    unnest(cols=c(programIndicators)) %>%
+    rename(dataElements = programIndicators)
+  data_elements <- data_elements %>%
+    bind_rows(program_indicators)
   }
-  if(is.null(data_element_group)){
+  if(is.null(data_group)){
     data_elements <-  rbindlist(map(metadata[["dataElements"]], as.data.table), fill = TRUE, idcol = T) %>%
-      # filter(aggregationType == "SUM") %>%
-      # filter(!(grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
-      # filter((grepl(paste0(c("Geo-locations","EGEN_","GL_", "EVAC_", " location"), collapse="|"), name, ignore.case=TRUE))) %>%
       select(id, name, aggregationType) %>%
       unique() %>%
       rename(dataElements = id)
-    data_elements <- sample_n(data_elements, 10)
+    
+    program_indicators <- rbindlist(map(metadata[["programIndicators"]], as.data.table), fill = TRUE, idcol = T) %>%
+      select(id, name, aggregationType) %>%
+      unique() %>%
+      rename(dataElements = id)
+    
+    if(include_data_elements == TRUE & include_program_indicators == TRUE){
+    data_elements <- data_elements %>%
+      bind_rows(program_indicators)
+    }
+    if(include_data_elements == TRUE & include_program_indicators == FALSE){
+      data_elements <- data_elements
+    }
+    if(include_data_elements == FALSE & include_program_indicators == FALSE){
+      data_elements <- NULL
+    }
+    if(include_data_elements == FALSE & include_program_indicators == TRUE){
+      data_elements <- program_indicators
+    }
+    # data_elements <- sample_n(data_elements, 15)
   }
 
   country_id <- rbindlist(map(metadata[["organisationUnits"]], as.data.table), fill = TRUE, idcol = T) %>%

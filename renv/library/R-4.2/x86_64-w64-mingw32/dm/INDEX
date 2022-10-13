@@ -1,0 +1,72 @@
+check_key               Check if column(s) can be used as keys
+check_set_equality      Check column values for set equality
+check_subset            Check column values for subset
+copy_dm_to              Copy data model to data source
+db_schema_create        Create a schema on a database
+db_schema_drop          Remove a schema from a database
+db_schema_exists        Check for existence of a schema on a database
+db_schema_list          List schemas on a database
+decompose_table         Decompose a table into two linked tables
+dm                      Data model class
+dm_add_fk               Add foreign keys
+dm_add_pk               Add a primary key
+dm_deconstruct          Create code to deconstruct a dm object
+dm_disambiguate_cols    Resolve column name ambiguities
+dm_draw                 Draw a diagram of the data model
+dm_enum_fk_candidates   Foreign key candidates
+dm_examine_cardinalities
+                        Learn about your data model
+dm_examine_constraints
+                        Validate your data model
+dm_filter               Filtering
+dm_financial            Creates a dm object for the Financial data
+dm_flatten_to_tbl       Flatten a part of a 'dm' into a wide table
+dm_from_con             Load a dm from a remote data source
+dm_get_all_fks          Get foreign key constraints
+dm_get_all_pks          Get all primary keys of a 'dm' object
+dm_get_con              Get connection
+dm_get_tables           Get tables
+dm_gui                  Shiny app for defining dm objects
+dm_has_pk               Check for primary key
+dm_mutate_tbl           Update tables in a 'dm'
+dm_nest_tbl             Nest a table inside its dm
+dm_nrow                 Number of rows
+dm_nycflights13         Creates a dm object for the 'nycflights13' data
+dm_pack_tbl             dm_pack_tbl()
+dm_paste                Create R code for a dm object
+dm_pixarfilms           Creates a dm object for the 'pixarfilms' data
+dm_ptype                Prototype for a dm object
+dm_rename               Rename columns
+dm_rm_fk                Remove foreign keys
+dm_rm_pk                Remove a primary key
+dm_select               Select columns
+dm_select_tbl           Select and rename tables
+dm_set_colors           Color in database diagrams
+dm_unnest_tbl           Unnest columns from a wrapped table
+dm_unpack_tbl           Unpack columns from a wrapped table
+dm_unwrap_tbl           Unwrap a single table dm
+dm_validate             Validator
+dm_wrap_tbl             Wrap dm into a single tibble dm
+dm_zoom_to              Mark table for manipulation
+dplyr_join              'dplyr' join methods for zoomed dm objects
+dplyr_table_manipulation
+                        'dplyr' table manipulation methods for zoomed
+                        dm objects
+enum_pk_candidates      Primary key candidate
+examine_cardinality     Check table relations
+glimpse.dm              Get a glimpse of your 'dm' object
+head.dm_zoomed          'utils' table manipulation methods for
+                        'dm_zoomed' objects
+json_nest               JSON nest
+json_nest_join          JSON nest join
+json_pack               JSON pack
+json_pack_join          JSON pack join
+materialize             Materialize
+pack_join               Pack Join
+pull_tbl                Retrieve a table
+reunite_parent_child    Merge two tables that are linked by a foreign
+                        key relation
+rows-dm                 Modifying rows for multiple tables
+tidyr_table_manipulation
+                        'tidyr' table manipulation methods for zoomed
+                        dm objects

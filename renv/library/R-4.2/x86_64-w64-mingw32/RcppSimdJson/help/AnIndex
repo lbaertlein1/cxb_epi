@@ -1,0 +1,10 @@
+RcppSimdJson-package	RcppSimdJson-package
+fload	fparse
+fminify	simdjson-utilities
+fparse	fparse
+is_valid_json	simdjson-utilities
+is_valid_utf8	simdjson-utilities
+parseExample	parseExample
+RcppSimdJson	RcppSimdJson-package
+simdjson-utilities	simdjson-utilities
+validateJSON	validateJSON

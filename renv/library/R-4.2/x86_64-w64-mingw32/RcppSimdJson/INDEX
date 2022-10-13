@@ -1,0 +1,6 @@
+RcppSimdJson-package    'Rcpp' Bindings for the 'simdjson' Header-Only
+                        Library for 'JSON' Parsing
+fparse                  Fast, Friendly, and Flexible JSON Parsing
+is_valid_json           simdjson Utilities
+parseExample            Simple JSON Parsing Example
+validateJSON            Validate a JSON file, fast

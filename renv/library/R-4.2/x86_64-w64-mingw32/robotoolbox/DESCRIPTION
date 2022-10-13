@@ -1,0 +1,46 @@
+Package: robotoolbox
+Title: An R Client for the KoboToolbox API
+Version: 1.0.1.9000
+Authors@R: c(person(given = "Ahmadou",
+                    family = "Dicko",
+		    email = "mail@ahmadoudicko.com",
+		    role = c("aut", "cre")),
+	     person(given = "Hisham",
+                    family = "Galal",
+	   	    email = "galal@unhcr.org",
+		    role = "ctb"),
+	     person("Kobotoolbox",
+		    role = "cph"))
+Description: Utilities to access data from the KoboToolbox API v2.
+    <https://support.kobotoolbox.org/api.html>.
+Depends: R (>= 4.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en_US
+URL: https://gitlab.com/dickoa/robotoolbox
+BugReports: https://gitlab.com/dickoa/robotoolbox/-/issues
+Imports: crul (>= 1.2.0), RcppSimdJson (>= 0.1.6), data.table (>=
+        1.14.2), dplyr (>= 1.0.7), tidyr (>= 1.1.4), purrr (>= 0.3.4),
+        rlang (>= 0.4.12), tidyselect (>= 1.1.1), tibble (>= 3.1.6),
+        stringi (>= 1.7.6), glue (>= 1.6.0), dm (>= 1.0.1), labelled
+        (>= 2.9.0)
+Suggests: roxygen2 (>= 7.1.2), devtools (>= 2.4.3), vcr (>= 1.0.2),
+        knitr (>= 1.37), testthat (>= 3.1.1), covr (>= 3.5.1),
+        rmarkdown (>= 2.11), DiagrammeR (>= 1.0.9)
+VignetteBuilder: knitr
+RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
+LazyData: true
+RemoteType: gitlab
+RemoteHost: gitlab.com
+RemoteRepo: robotoolbox
+RemoteUsername: dickoa
+RemoteRef: HEAD
+RemoteSha: 6d6fcc55e6421205e6a89a70dd503afea97e19da
+NeedsCompilation: no
+Packaged: 2022-10-12 07:02:32 UTC; cxb-epidem
+Author: Ahmadou Dicko [aut, cre],
+  Hisham Galal [ctb],
+  Kobotoolbox [cph]
+Maintainer: Ahmadou Dicko <mail@ahmadoudicko.com>
+Built: R 4.2.1; ; 2022-10-12 07:02:33 UTC; windows

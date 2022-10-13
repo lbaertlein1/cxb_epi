@@ -1,0 +1,16 @@
+asset_list              KoboToolbox asset, assets list and submissions
+                        data
+kobo_asset              Get a specific KoboToolbox Asset from a uid
+kobo_asset_list         List all available KoboToolbox API assets
+kobo_asset_version      Get a specific KoboToolbox Asset version from
+                        an asset uid or 'kobo_asset'
+kobo_asset_version_list
+                        List all available versions of a KoboToolbox
+                        asset
+kobo_data               Get all submissions from a KoboToolbox project
+kobo_form               Get a KoboToolbox project form
+kobo_lang               Languages used in the KoboToolbox project
+kobo_settings           Get 'robotoolbox' settings
+kobo_setup              Set the 'robotoolbox' settings
+kobo_token              Get your KoboToolbox API token
+robotoolbox             robotoolbox

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head><title>R: Relational Data Models</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+<h1> Relational Data Models
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;dm&rsquo; version 1.0.2</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../demo">Code demos</a>.  Use <a href="../../utils/help/demo">demo()</a> to run them.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p style="text-align: center;">
+<a href="#A">A</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#J">J</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#U">U</a>
+<a href="#Z">Z</a>
+</p>
+
+
+<h2><a id="A">-- A --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_join.html">anti_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">anti_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">arrange.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dm.html">as_dm</a></td>
+<td>Data model class</td></tr>
+</table>
+
+<h2><a id="C">-- C --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">check_cardinality_...</a></td>
+<td>Check table relations</td></tr>
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">check_cardinality_0_1</a></td>
+<td>Check table relations</td></tr>
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">check_cardinality_0_n</a></td>
+<td>Check table relations</td></tr>
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">check_cardinality_1_1</a></td>
+<td>Check table relations</td></tr>
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">check_cardinality_1_n</a></td>
+<td>Check table relations</td></tr>
+<tr><td style="width: 25%;"><a href="check_key.html">check_key</a></td>
+<td>Check if column(s) can be used as keys</td></tr>
+<tr><td style="width: 25%;"><a href="check_set_equality.html">check_set_equality</a></td>
+<td>Check column values for set equality</td></tr>
+<tr><td style="width: 25%;"><a href="check_subset.html">check_subset</a></td>
+<td>Check column values for subset</td></tr>
+<tr><td style="width: 25%;"><a href="materialize.html">collect.dm</a></td>
+<td>Materialize</td></tr>
+<tr><td style="width: 25%;"><a href="materialize.html">compute.dm</a></td>
+<td>Materialize</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">compute.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="copy_dm_to.html">copy_dm_to</a></td>
+<td>Copy data model to data source</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">count.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="D">-- D --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="db_schema_create.html">db_schema_create</a></td>
+<td>Create a schema on a database</td></tr>
+<tr><td style="width: 25%;"><a href="db_schema_drop.html">db_schema_drop</a></td>
+<td>Remove a schema from a database</td></tr>
+<tr><td style="width: 25%;"><a href="db_schema_exists.html">db_schema_exists</a></td>
+<td>Check for existence of a schema on a database</td></tr>
+<tr><td style="width: 25%;"><a href="db_schema_list.html">db_schema_list</a></td>
+<td>List schemas on a database</td></tr>
+<tr><td style="width: 25%;"><a href="decompose_table.html">decompose_table</a></td>
+<td>Decompose a table into two linked tables</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">distinct.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dm.html">dm</a></td>
+<td>Data model class</td></tr>
+<tr><td style="width: 25%;"><a href="dm_add_fk.html">dm_add_fk</a></td>
+<td>Add foreign keys</td></tr>
+<tr><td style="width: 25%;"><a href="dm_add_pk.html">dm_add_pk</a></td>
+<td>Add a primary key</td></tr>
+<tr><td style="width: 25%;"><a href="dm_deconstruct.html">dm_deconstruct</a></td>
+<td>Create code to deconstruct a dm object</td></tr>
+<tr><td style="width: 25%;"><a href="dm_disambiguate_cols.html">dm_disambiguate_cols</a></td>
+<td>Resolve column name ambiguities</td></tr>
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">dm_discard_zoomed</a></td>
+<td>Mark table for manipulation</td></tr>
+<tr><td style="width: 25%;"><a href="dm_draw.html">dm_draw</a></td>
+<td>Draw a diagram of the data model</td></tr>
+<tr><td style="width: 25%;"><a href="dm_enum_fk_candidates.html">dm_enum_fk_candidates</a></td>
+<td>Foreign key candidates</td></tr>
+<tr><td style="width: 25%;"><a href="dm_enum_pk_candidates.html">dm_enum_pk_candidates</a></td>
+<td>Primary key candidate</td></tr>
+<tr><td style="width: 25%;"><a href="dm_examine_cardinalities.html">dm_examine_cardinalities</a></td>
+<td>Learn about your data model</td></tr>
+<tr><td style="width: 25%;"><a href="dm_examine_constraints.html">dm_examine_constraints</a></td>
+<td>Validate your data model</td></tr>
+<tr><td style="width: 25%;"><a href="dm_filter.html">dm_filter</a></td>
+<td>Filtering</td></tr>
+<tr><td style="width: 25%;"><a href="dm_financial.html">dm_financial</a></td>
+<td>Creates a dm object for the Financial data</td></tr>
+<tr><td style="width: 25%;"><a href="dm_financial.html">dm_financial_sqlite</a></td>
+<td>Creates a dm object for the Financial data</td></tr>
+<tr><td style="width: 25%;"><a href="dm_flatten_to_tbl.html">dm_flatten_to_tbl</a></td>
+<td>Flatten a part of a 'dm' into a wide table</td></tr>
+<tr><td style="width: 25%;"><a href="dm_from_con.html">dm_from_con</a></td>
+<td>Load a dm from a remote data source</td></tr>
+<tr><td style="width: 25%;"><a href="dm_get_all_fks.html">dm_get_all_fks</a></td>
+<td>Get foreign key constraints</td></tr>
+<tr><td style="width: 25%;"><a href="dm_get_all_pks.html">dm_get_all_pks</a></td>
+<td>Get all primary keys of a 'dm' object</td></tr>
+<tr><td style="width: 25%;"><a href="dm_set_colors.html">dm_get_available_colors</a></td>
+<td>Color in database diagrams</td></tr>
+<tr><td style="width: 25%;"><a href="dm_set_colors.html">dm_get_colors</a></td>
+<td>Color in database diagrams</td></tr>
+<tr><td style="width: 25%;"><a href="dm_get_con.html">dm_get_con</a></td>
+<td>Get connection</td></tr>
+<tr><td style="width: 25%;"><a href="dm_get_tables.html">dm_get_tables</a></td>
+<td>Get tables</td></tr>
+<tr><td style="width: 25%;"><a href="dm_gui.html">dm_gui</a></td>
+<td>Shiny app for defining dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dm_has_pk.html">dm_has_pk</a></td>
+<td>Check for primary key</td></tr>
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">dm_insert_zoomed</a></td>
+<td>Mark table for manipulation</td></tr>
+<tr><td style="width: 25%;"><a href="dm_mutate_tbl.html">dm_mutate_tbl</a></td>
+<td>Update tables in a 'dm'</td></tr>
+<tr><td style="width: 25%;"><a href="dm_nest_tbl.html">dm_nest_tbl</a></td>
+<td>Nest a table inside its dm</td></tr>
+<tr><td style="width: 25%;"><a href="dm_nrow.html">dm_nrow</a></td>
+<td>Number of rows</td></tr>
+<tr><td style="width: 25%;"><a href="dm_nycflights13.html">dm_nycflights13</a></td>
+<td>Creates a dm object for the 'nycflights13' data</td></tr>
+<tr><td style="width: 25%;"><a href="dm_pack_tbl.html">dm_pack_tbl</a></td>
+<td>dm_pack_tbl()</td></tr>
+<tr><td style="width: 25%;"><a href="dm_paste.html">dm_paste</a></td>
+<td>Create R code for a dm object</td></tr>
+<tr><td style="width: 25%;"><a href="dm_pixarfilms.html">dm_pixarfilms</a></td>
+<td>Creates a dm object for the 'pixarfilms' data</td></tr>
+<tr><td style="width: 25%;"><a href="dm_ptype.html">dm_ptype</a></td>
+<td>Prototype for a dm object</td></tr>
+<tr><td style="width: 25%;"><a href="dm_rename.html">dm_rename</a></td>
+<td>Rename columns</td></tr>
+<tr><td style="width: 25%;"><a href="dm_select_tbl.html">dm_rename_tbl</a></td>
+<td>Select and rename tables</td></tr>
+<tr><td style="width: 25%;"><a href="dm_rm_fk.html">dm_rm_fk</a></td>
+<td>Remove foreign keys</td></tr>
+<tr><td style="width: 25%;"><a href="dm_rm_pk.html">dm_rm_pk</a></td>
+<td>Remove a primary key</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_...</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_append</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_delete</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_insert</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_patch</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_update</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">dm_rows_upsert</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+<tr><td style="width: 25%;"><a href="dm_select.html">dm_select</a></td>
+<td>Select columns</td></tr>
+<tr><td style="width: 25%;"><a href="dm_select_tbl.html">dm_select_tbl</a></td>
+<td>Select and rename tables</td></tr>
+<tr><td style="width: 25%;"><a href="dm_set_colors.html">dm_set_colors</a></td>
+<td>Color in database diagrams</td></tr>
+<tr><td style="width: 25%;"><a href="dm_unnest_tbl.html">dm_unnest_tbl</a></td>
+<td>Unnest columns from a wrapped table</td></tr>
+<tr><td style="width: 25%;"><a href="dm_unpack_tbl.html">dm_unpack_tbl</a></td>
+<td>Unpack columns from a wrapped table</td></tr>
+<tr><td style="width: 25%;"><a href="dm_unwrap_tbl.html">dm_unwrap_tbl</a></td>
+<td>Unwrap a single table dm</td></tr>
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">dm_update_zoomed</a></td>
+<td>Mark table for manipulation</td></tr>
+<tr><td style="width: 25%;"><a href="dm_validate.html">dm_validate</a></td>
+<td>Validator</td></tr>
+<tr><td style="width: 25%;"><a href="dm_wrap_tbl.html">dm_wrap_tbl</a></td>
+<td>Wrap dm into a single tibble dm</td></tr>
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">dm_zoomed_df</a></td>
+<td>Mark table for manipulation</td></tr>
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">dm_zoom_to</a></td>
+<td>Mark table for manipulation</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">dplyr_join</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">dplyr_table_manipulation</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="E">-- E --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dm_enum_fk_candidates.html">enum_fk_candidates</a></td>
+<td>Foreign key candidates</td></tr>
+<tr><td style="width: 25%;"><a href="dm_enum_pk_candidates.html">enum_pk_candidates</a></td>
+<td>Primary key candidate</td></tr>
+<tr><td style="width: 25%;"><a href="examine_cardinality.html">examine_cardinality</a></td>
+<td>Check table relations</td></tr>
+</table>
+
+<h2><a id="F">-- F --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">filter.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">full_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">full_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="G">-- G --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="glimpse.dm.html">glimpse.dm</a></td>
+<td>Get a glimpse of your 'dm' object</td></tr>
+<tr><td style="width: 25%;"><a href="glimpse.dm.html">glimpse.dm_zoomed</a></td>
+<td>Get a glimpse of your 'dm' object</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">group_by.dm_keyed_tbl</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">group_by.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="H">-- H --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="utils_table_manipulation.html">head.dm_zoomed</a></td>
+<td>'utils' table manipulation methods for 'dm_zoomed' objects</td></tr>
+</table>
+
+<h2><a id="I">-- I --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_join.html">inner_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">inner_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dm.html">is_dm</a></td>
+<td>Data model class</td></tr>
+</table>
+
+<h2><a id="J">-- J --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="json_nest.html">json_nest</a></td>
+<td>JSON nest</td></tr>
+<tr><td style="width: 25%;"><a href="json_nest_join.html">json_nest_join</a></td>
+<td>JSON nest join</td></tr>
+<tr><td style="width: 25%;"><a href="json_pack.html">json_pack</a></td>
+<td>JSON pack</td></tr>
+<tr><td style="width: 25%;"><a href="json_pack_join.html">json_pack_join</a></td>
+<td>JSON pack join</td></tr>
+</table>
+
+<h2><a id="L">-- L --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_join.html">left_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">left_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="M">-- M --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="materialize.html">materialize</a></td>
+<td>Materialize</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">mutate.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="N">-- N --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_join.html">nest_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dm.html">new_dm</a></td>
+<td>Data model class</td></tr>
+</table>
+
+<h2><a id="P">-- P --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="pack_join.html">pack_join</a></td>
+<td>Pack Join</td></tr>
+<tr><td style="width: 25%;"><a href="pack_join.html">pack_join.dm_zoomed</a></td>
+<td>Pack Join</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">pull.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="pull_tbl.html">pull_tbl</a></td>
+<td>Retrieve a table</td></tr>
+</table>
+
+<h2><a id="R">-- R --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">relocate.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">rename.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="reunite_parent_child.html">reunite_parent_child</a></td>
+<td>Merge two tables that are linked by a foreign key relation</td></tr>
+<tr><td style="width: 25%;"><a href="reunite_parent_child.html">reunite_parent_child_from_list</a></td>
+<td>Merge two tables that are linked by a foreign key relation</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">right_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">right_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="rows-dm.html">rows-dm</a></td>
+<td>Modifying rows for multiple tables</td></tr>
+</table>
+
+<h2><a id="S">-- S --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">select.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">semi_join.dm_keyed_tbl</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_join.html">semi_join.dm_zoomed</a></td>
+<td>'dplyr' join methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="tidyr_table_manipulation.html">separate.dm_keyed_tbl</a></td>
+<td>'tidyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="tidyr_table_manipulation.html">separate.dm_zoomed</a></td>
+<td>'tidyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">slice.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">summarise.dm_keyed_tbl</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">summarise.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="T">-- T --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="utils_table_manipulation.html">tail.dm_zoomed</a></td>
+<td>'utils' table manipulation methods for 'dm_zoomed' objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">tally.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="tidyr_table_manipulation.html">tidyr_table_manipulation</a></td>
+<td>'tidyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">transmute.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="U">-- U --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dplyr_table_manipulation.html">ungroup.dm_zoomed</a></td>
+<td>'dplyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="tidyr_table_manipulation.html">unite.dm_keyed_tbl</a></td>
+<td>'tidyr' table manipulation methods for zoomed dm objects</td></tr>
+<tr><td style="width: 25%;"><a href="tidyr_table_manipulation.html">unite.dm_zoomed</a></td>
+<td>'tidyr' table manipulation methods for zoomed dm objects</td></tr>
+</table>
+
+<h2><a id="Z">-- Z --</a></h2>
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dm_zoom_to.html">zoomed_df</a></td>
+<td>Mark table for manipulation</td></tr>
+</table>
+</div></body></html>

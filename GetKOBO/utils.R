@@ -1,4 +1,4 @@
-pacman::p_load(httr, readr, tidyverse, lubridate)
+pacman::p_load(httr, readr, tidyverse, lubridate, yaml, labelled)
 
 init_kobo_data_struc <- function(folder, base_url, username, password){
   #check to see if folder exists, if not create it
@@ -45,7 +45,8 @@ load_specs <- function(folder = Sys.getenv("kobo_folder")){
 
 getKOBO <- function(asset_id = NULL,
                     get_all_cebs = FALSE,
-                    get_all = FALSE){
+                    get_all = FALSE,
+                    with_labels = TRUE){
   if(!is.null(asset_id)){
     l <- kobo_asset_list() %>%
       arrange(desc(as.Date(date_modified, origin=lubridate::origin))) %>%
@@ -87,7 +88,12 @@ getKOBO <- function(asset_id = NULL,
   }
   output_list <- list()
   for(i in 1:length(asset_id)){
-    data <- kobo_data(kobo_asset(asset_id[i]))
+    data <- kobo_data(kobo_asset(asset_id[i])) %>%
+      as.data.frame(.) %>%
+      janitor::clean_names(.)
+    if(with_labels == FALSE){
+      data <- labelled::remove_labels(data)
+    }
     output_list <- append(output_list, list(new=data))
     names(output_list)[i] <- asset_name[i]
   }

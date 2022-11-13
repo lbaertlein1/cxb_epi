@@ -214,6 +214,12 @@ getData <- function(data_group = NULL,
   #                                  ou = dput(org_unit_list$id),
   #                                  pe = dput(time_period),
   #                                 return_names = TRUE)
+  
+  if(!is.null(all_data)){
+    if(nrow(all_data) > 0){
+      rio::export(all_data, here::here(load_specs()$dhis2_folder, paste0(data_group, "_",time_period_type, ".rds")))
+    }
+  }
   return(all_data)
 }
 
